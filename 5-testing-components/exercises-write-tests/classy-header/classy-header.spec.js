@@ -8,40 +8,40 @@ describe('classyHeader: renders DOM headers of different levels and classes', ()
   describe('an H3 with text: "hello", and no classes', () => {
     const actual = classyHeader(3, 'hello');
     it('has tagName "H3"', () => {
-      _;
+      expect(actual.tagName).toEqual('H3');
     });
     it('has innerHTML: "hello"', () => {
-      _;
+      expect(actual.innerHTML).toEqual('hello');
     });
     it('has classList length 0', () => {
-      _;
+      expect(actual.className.length).toEqual(0);
     });
     it('has className: ""', () => {
-      _;
+      expect(actual.className).toEqual('');
     });
     it('has childElementCount: 0', () => {
-      _;
+      expect(actual.childElementCount).toEqual(0);
     });
   });
   describe('an H1 with text: "good bye", and two classes', () => {
-    const actual = classyHeader(_, _, _);
+    const actual = classyHeader(1, "good bye", ["fancy", "hover-right"]);
     it('has tagName "H1"', () => {
-      _;
+      expect(actual.tagName).toEqual('H1');
     });
     it('has innerHTML: "good bye"', () => {
-      _;
+      expect(actual.innerHTML).toEqual('good bye');
     });
     it('has classList length 2', () => {
-      _;
+      expect(actual.classList.length).toEqual(2);
     });
     it('have class: "fancy"', () => {
-      _;
+      expect(actual.classList.contains('fancy')).toEqual(true);
     });
     it('have class: "hover-right"', () => {
-      _;
+      expect(actual.classList.contains('hover-right')).toEqual(true);
     });
     it('has childElementCount: 0', () => {
-      _;
+      expect(actual.childElementCount).toEqual(0);
     });
   });
   describe('does not allow invalid header levels', () => {

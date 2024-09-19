@@ -16,17 +16,17 @@
 
     <script id="handlers">
       const deleteTodoHandler = (event) => {
-        debugger;
-        const target = _;
-        if (target._ === 'BUTTON' && target._ === 'X') {
-          const liToRemove = _.parentElement;
-          const todoList = document.getElementById(_);
-          todoList._(liToRemove);
+    
+        const target = event.target;
+        if (target.nodeName === 'BUTTON' && target.value === 'X') {
+          const liToRemove = liToRemove.parentElement;
+          const todoList = document.getElementById('dd-todo-button');
+          todoList.remove(liToRemove);
         }
       };
 
       const addTodoHandler = (event) => {
-        debugger;
+   
 
         const newLi = document.createElement(_);
         const newButton = document.createElement(_);
@@ -43,9 +43,9 @@
     </script>
 
     <script id=" listeners">
-      document.getElementById(_).addEventListener('click', _);
+      document.getElementById('add-todo-button').addEventListener('click', deleteTodoHandler);
 
-      document.getElementById(_).addEventListener('click', _);
+      document.getElementById("add-todo-button").addEventListener('click', addTodoHandler);
     </script>
   </body>
 </html>

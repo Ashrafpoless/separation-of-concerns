@@ -28,22 +28,22 @@
 
     <script id="handlers">
       const setSecretHandler = () => {
-        debugger;
+        
 
-        const newSecret = prompt('_');
+        const newSecret = prompt('tell me a secret :)');
         if (newSecret === null) {
           return;
         }
 
         secret = newSecret;
 
-        alert('_');
+        alert('i will keep it in a deep well');
       };
 
       const guessSecretHandler = () => {
-        debugger;
+        
 
-        const guess = prompt('_');
+        const guess = prompt('guess what is the secret');
         if (guess === null) {
           return;
         }
@@ -51,21 +51,23 @@
         const isCorrect = guess === secret;
 
         if (isCorrect) {
-          alert('_');
+          alert(`you are right`);
+          
         } else {
-          alert('_');
+          alert('oh nooo, that is wrong');
         }
       };
 
       const cheatHandler = () => {
-        debugger;
+        
 
-        const isACheater = confirm('_');
+        const isACheater = confirm('did you cheat on me');
 
         if (isACheater) {
-          alert(`_`);
+          alert(`bad `);
+          alert(`but i am gonne help be with ${secret}`);
         } else {
-          alert('_');
+          alert('you are good');
         }
       };
     </script>
@@ -74,11 +76,10 @@
       // https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_event_listeners
       // https://stackoverflow.com/questions/7338193/using-chrome-how-to-find-to-which-events-are-bound-to-an-element
 
-      _._._(_, _);
-
-      _._._(_, _);
-
-      _._._(_, _);
+       document.getElementById("set").addEventListener('click', setSecretHandler );
+      document.getElementById("guess").addEventListener('click', guessSecretHandler );
+      document.getElementById("cheat").addEventListener('click', cheatHandler );
+     
     </script>
   </body>
 </html>

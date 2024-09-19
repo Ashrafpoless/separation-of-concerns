@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { paragraph } from './1-paragraph.js';
+import { paragraph } from './paragraph.js';
 
 describe('paragraph: renders a paragraph with optional styling', () => {
   describe('"lorem ipsum", no classes', () => {
@@ -52,7 +52,7 @@ describe('paragraph: renders a paragraph with optional styling', () => {
     it('has childElementCount: 0', () => {
       expect(actual.childElementCount).toEqual(0);
     });
-  });
+  })
 
   describe('"hello user", 1 class', () => {
     const actual = paragraph('hello user', ['friendly']);

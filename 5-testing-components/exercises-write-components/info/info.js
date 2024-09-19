@@ -7,16 +7,16 @@
  * @returns {HTMLDetailsElement}
  */
 export const info = (caption, mainText, id = '') => {
-  const detailsEl = document.createElement('_');
-  _;
+  const detailsEl = document.createElement('DETAILS');
+  detailsEl.id = id;
 
-  const summaryEl = document.createElement('_');
-  _;
-  _;
+  const summaryEl = document.createElement('SUMMARY');
+  summaryEl.innerHTML = caption;
+  detailsEl.append(summaryEl);
 
-  const pEl = document.createElement('_');
-  _;
-  _;
+  const pEl = document.createElement('p');
+  pEl.innerHTML = mainText;
+  detailsEl.append(pEl);
 
   return detailsEl;
 };

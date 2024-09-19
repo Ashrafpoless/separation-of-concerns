@@ -15,6 +15,19 @@ console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 //  append something to the end
 
 // --- --- --- --- --- ---
+divEl.children[0].remove() ;
+
+
+const navElem = document.createElement('nav')
+divEl.appendChild(navElem)
+const  secElem = divEl.children[0];
+divEl.insertBefore(navElem ,secElem)
+const h2Elem = document.createElement('h2');
+divEl.appendChild(h2Elem)
+divEl.insertBefore(h2Elem , secElem)
+const pElem = document.createElement('p');
+divEl.children[3].remove();
+divEl.appendChild(pElem)
 
 console.log(divEl.nodeName + ' (after)', divEl.cloneNode(true));
 

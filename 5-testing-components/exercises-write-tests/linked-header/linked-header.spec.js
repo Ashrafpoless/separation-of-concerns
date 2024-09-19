@@ -6,7 +6,7 @@ import { linkedHeader } from './linked-header.js';
 
 describe('linkedHeader: renders an anchor inside a heading', () => {
   describe('a header linked to google', () => {
-    const actual = linkedHeader(_, _);
+    const actual = linkedHeader('google it', 'https://www.google.com/',  );
 
     it('has tagName: "H2"', () => {
       expect(actual.tagName).toEqual('H2');
@@ -16,7 +16,7 @@ describe('linkedHeader: renders an anchor inside a heading', () => {
     });
 
     describe(`first child`, () => {
-      const actualChild = _._[_];
+      const actualChild = actual.children[0];
       it('has tagName: "A"', () => {
         expect(actualChild.tagName).toEqual('A');
       });
@@ -36,31 +36,31 @@ describe('linkedHeader: renders an anchor inside a heading', () => {
   });
 
   describe('a header linked to badgers', () => {
-    const actual = linkedHeader(_, _, _);
+    const actual = linkedHeader("badger x 3", "https://badgerbadgerbadger.com/", "_self");
 
     it('has tagName: "H2"', () => {
-      _;
+      expect(actual.tagName).toEqual('H2');
     });
     it('has childElementCount: 1', () => {
-      _;
+      expect(actual.childElementCount).toEqual(1);
     });
 
     describe(`first child`, () => {
       const actualChild = actual.children[0];
       it('has tagName: "A"', () => {
-        _;
+        expect(actualChild.tagName).toEqual('A');
       });
-      it('has href: "hhttps://badgerbadgerbadger.com/"', () => {
-        _;
+      it('has href: "https://badgerbadgerbadger.com/"', () => {
+        expect(actualChild.href).toEqual("https://badgerbadgerbadger.com/");
       });
       it('has target: "_self"', () => {
-        _;
+        expect(actualChild.target).toEqual('_self');
       });
       it('has innerHTML: "badger x 3"', () => {
-        _;
+        expect(actualChild.innerHTML).toEqual('badger x 3');
       });
       it('has childElementCount: 0', () => {
-        _;
+        expect(actualChild.childElementCount).toEqual(0);
       });
     });
   });
